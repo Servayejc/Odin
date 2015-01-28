@@ -49,7 +49,19 @@ namespace CustomerData
                       ,[Pays]
                       ,[CodePostal]
                   FROM [Odin].[dbo].[Customers]
-                  where CodeClient = @CodeClient", new List<string> { "@CodeClient" }, new List<object> { SearchValue }, CommandType.Text);
+                  where CodeClient like @Search OR 
+                       Prenom Like @Search OR
+                        NomFamille Like @Search OR
+                        NAS = @Search OR
+                        Ville Like @Search OR
+                        Rue Like @Search OR
+                        Numero Like @Search OR
+                        Province Like @Search OR
+                        Pays Like @Search OR
+                        CodePostal Like @Search OR
+                        (Prenom + ' ' + NomFamille) Like @Search",
+                         new List<string> { "@Search"},
+                         new List<object> { SearchValue }, CommandType.Text);
                 List<CustomerItem> Customers = new List<CustomerItem>();
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -108,22 +120,55 @@ namespace CustomerData
         {
             CustomerItem cust = dgResults.Rows[e.RowIndex].Tag as CustomerItem;
 
-            TabPage tp = new TabPage();
-            tp.Name = cust.CodeClient + "~" + new Guid().ToString();
-            tp.Text = cust.CodeClient + "(" + cust.Prenom + " " + cust.NomFamille + " )";
+            bool found = false;
+            int idx = -1;
+            foreach (TabPage tab in tcOpenCust.TabPages)
+            {
+                idx++;
+                if (tab.Name.StartsWith(cust.CodeClient + "~"))
+                {
+                    found = true;
+                    break;
+                }
+            }
 
-            ctlCustInfoMain ctlmain = new ctlCustInfoMain(cust);
-            ctlmain.Dock = DockStyle.Fill;
-            tp.Controls.Add(ctlmain);
+            if (!found)
+            {
+                TabPage tp = new TabPage();
+                tp.Name = cust.CodeClient + "~" + new Guid().ToString();
+                tp.Text = cust.CodeClient + " (" + cust.Prenom + " " + cust.NomFamille + " )";
 
-            tcOpenCust.TabPages.Add(tp);
+                ctlCustInfoMain ctlmain = new ctlCustInfoMain(cust);
+                ctlmain.Dock = DockStyle.Fill;
+                tp.Controls.Add(ctlmain);
 
+                ShowClients();
+
+                tcOpenCust.TabPages.Add(tp);
+
+                tcOpenCust.SelectedIndex = tcOpenCust.TabPages.Count - 1;
+            }
+            else
+            {
+                ShowClients();
+                tcOpenCust.SelectedIndex = idx;
+            }
+
+        }
+
+        private void ShowClients()
+        {
             pnlResults.Dock = DockStyle.None;
             pnlResults.Visible = false;
-            
+
             pnlOpenCustomers.Dock = DockStyle.Fill;
             pnlOpenCustomers.Visible = true;
+        }
 
+        private void tcOpenCust_CloseClick(object sender, EventArgs e)
+        {
+            tcOpenCust.TabPages[tcOpenCust.SelectedIndex].Controls[0].Dispose();
+            tcOpenCust.TabPages.RemoveAt(tcOpenCust.SelectedIndex);
         }
 
     }

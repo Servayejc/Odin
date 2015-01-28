@@ -27,6 +27,12 @@ namespace Odin
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                da.Dispose();
+                cmd.Dispose();
+                cnn.Close();
+                cnn.Dispose();
+
+
                 return dt;
             }
             catch(Exception ex)
@@ -39,6 +45,7 @@ namespace Odin
         public void ExecuteNonQuery(string SQL, List<string> Params, List<object> ParamValues, CommandType cmdType)
         {           
                 SqlConnection cnn = new SqlConnection(cnnString);
+                cnn.Open();
                 SqlCommand cmd = new SqlCommand(SQL, cnn);
                 int i = 0;
                 foreach (string p in Params)
@@ -48,6 +55,10 @@ namespace Odin
                 }
 
                 cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+                cnn.Close();
+                cnn.Dispose();
         }
     }
 }

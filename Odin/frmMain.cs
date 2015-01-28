@@ -61,5 +61,11 @@ namespace Odin
                 pnlControls.Text = ((IModule)e.Node.Tag).ModuleName;
             } 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Context.IsLoggedOn = false;
+            this.Context.Transfer(new frmLogin());
+        }
     }
 }

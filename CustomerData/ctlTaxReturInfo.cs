@@ -17,10 +17,18 @@ namespace CustomerData
 {
     public partial class ctlTaxReturInfo : UserControl
     {
+        CustomerItem Customer;
         public ctlTaxReturInfo(CustomerItem Customer)
         {
+            this.Customer = Customer;
             InitializeComponent();
 
+            UpdateGV();
+        }
+
+        public void UpdateGV()
+        {
+            gvStatusList.Rows.Clear();
             foreach (TaxReturnItem ti in GetTaxReturns(Customer))
             {
                 gvStatusList.Rows.Add(new object[] { ti.TaxYear, ti.Status, ti.Datestatus, ti.UserName });

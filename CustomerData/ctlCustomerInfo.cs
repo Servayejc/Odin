@@ -17,16 +17,21 @@ namespace CustomerData
 {
     public partial class ctlCustomerInfo : UserControl
     {
-        CustomerItem Customer;
-        public ctlCustomerInfo(CustomerItem Customer)
-        {
-            this.Customer = Customer;
-            InitializeComponent();                       
 
+        public ctlCustomerInfo()
+        {
+            InitializeComponent(); 
         }
 
         private void ctlCustomerInfo_Load(object sender, EventArgs e)
         {
+               
+        }
+
+        public void UpdateGV(CustomerItem Customer)
+        {
+            dgCust.Dock = DockStyle.None;
+            dgCust.Rows.Clear();
             dgCust.Rows.Add(new object[] { "Client Code", Customer.CodeClient });
             dgCust.Rows.Add(new object[] { "First Name", Customer.Prenom });
             dgCust.Rows.Add(new object[] { "Last Name", Customer.NomFamille });
@@ -37,14 +42,12 @@ namespace CustomerData
             dgCust.Rows.Add(new object[] { "Postal Code", Customer.CodePostal });
             dgCust.Rows.Add(new object[] { "Province", Customer.Province });
             dgCust.Rows.Add(new object[] { "Country", Customer.Pays });
+            dgCust.Dock = DockStyle.Fill;
 
             foreach (DataGridViewColumn dc in dgCust.Columns)
             {
-                dc.Width = dgCust.Width / 2;                          
+                dc.Width = dgCust.Width / 2;
             }
-           
         }
-
-
     }
 }

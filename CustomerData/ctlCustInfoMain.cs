@@ -17,35 +17,71 @@ namespace CustomerData
 {
     public partial class ctlCustInfoMain : UserControl
     {
-        CustomerItem m_Customer;
+        CustomerItem Customer;
         public ctlCustInfoMain(CustomerItem Customer)
         {
-            m_Customer = Customer;
+            this.Customer = Customer;
             InitializeComponent();
-
-            ctlCustomerInfo info = new ctlCustomerInfo(Customer);
-            info.Dock = DockStyle.Fill;
-
-            tpCustInfo.Controls.Add(info);
         }
 
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tcMain.SelectedIndex == 1)
+            if (tcMain.SelectedIndex == 0)
+            {
+                //customer info
+                if (tpCustInfo.Controls.Count == 0)
+                {
+                    ctlCustomerInfo info = new ctlCustomerInfo();
+                    info.Dock = DockStyle.Fill;
+                    tpCustInfo.Controls.Add(info);
+                    tpCustInfo.Update();
+                    info.UpdateGV(Customer);
+                }
+                else
+                {
+                    ctlCustomerInfo info = tpCustInfo.Controls[0] as ctlCustomerInfo;
+                    info.UpdateGV(Customer);
+                }
+            }
+            else if (tcMain.SelectedIndex == 1)
             {
                 //tax returns
                 if (tpTaxReturns.Controls.Count == 0)
                 {
-                    ctlTaxReturInfo ctltaxreturns = new ctlTaxReturInfo(m_Customer);
+                    ctlTaxReturInfo ctltaxreturns = new ctlTaxReturInfo(Customer);
                     ctltaxreturns.Dock = DockStyle.Fill;
                     tpTaxReturns.Controls.Add(ctltaxreturns);
+                }
+                else
+                {
+                    ctlTaxReturInfo ctltaxreturns = tpTaxReturns.Controls[0] as ctlTaxReturInfo;
+                    ctltaxreturns.UpdateGV();
                 }
             }
             else if (tcMain.SelectedIndex == 2)
             { 
                 //contacts
+                //tax returns
+                if (tpContacts.Controls.Count == 0)
+                {
+                    ctlContacts ctlcontact = new ctlContacts(Customer);
+                    ctlcontact.Dock = DockStyle.Fill;
+                    tpContacts.Controls.Add(ctlcontact);
+                    ctlcontact.UpdateGV(Customer);
+                }
+                else
+                {
+                    ctlContacts ctlcontact = tpContacts.Controls[0] as ctlContacts;
+                    ctlcontact.UpdateGV(Customer);
+                }
             
             }
+        }
+
+        private void ctlCustInfoMain_Load(object sender, EventArgs e)
+        {
+            tcMain.SelectedIndex = -1;
+            tcMain.SelectedIndex = 0;
         }
     }
 }

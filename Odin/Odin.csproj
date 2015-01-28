@@ -81,6 +81,7 @@
     <Content Include="Resources\Images\logo-square.png" />
     <Content Include="Resources\Images\ThorHammer.jpg" />
     <Content Include="Resources\Images\ThorHammer256.png" />
+    <Content Include="Resources\Images\TopLogo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\ContactItem.cs" />
@@ -126,6 +127,12 @@
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
+      <HintPath>C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

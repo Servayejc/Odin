@@ -39,17 +39,17 @@ namespace CustomerData
             this.label1 = new Gizmox.WebGUI.Forms.Label();
             this.txtSearch = new Gizmox.WebGUI.Forms.TextBox();
             this.pnlContent = new Gizmox.WebGUI.Forms.Panel();
-            this.pnlResults = new Gizmox.WebGUI.Forms.Panel();
             this.pnlOpenCustomers = new Gizmox.WebGUI.Forms.Panel();
             this.tcOpenCust = new Gizmox.WebGUI.Forms.TabControl();
+            this.pnlResults = new Gizmox.WebGUI.Forms.Panel();
             this.dgResults = new Gizmox.WebGUI.Forms.DataGridView();
             this.dcClientCode = new Gizmox.WebGUI.Forms.DataGridViewTextBoxColumn();
             this.dcFname = new Gizmox.WebGUI.Forms.DataGridViewTextBoxColumn();
             this.dcLname = new Gizmox.WebGUI.Forms.DataGridViewTextBoxColumn();
             this.pnlContent.SuspendLayout();
-            this.pnlResults.SuspendLayout();
             this.pnlOpenCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcOpenCust)).BeginInit();
+            this.pnlResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,15 +121,6 @@ namespace CustomerData
             this.pnlContent.Size = new System.Drawing.Size(391, 271);
             this.pnlContent.TabIndex = 0;
             // 
-            // pnlResults
-            // 
-            this.pnlResults.Controls.Add(this.dgResults);
-            this.pnlResults.Location = new System.Drawing.Point(43, 30);
-            this.pnlResults.Name = "pnlResults";
-            this.pnlResults.Size = new System.Drawing.Size(100, 100);
-            this.pnlResults.TabIndex = 0;
-            this.pnlResults.Visible = false;
-            // 
             // pnlOpenCustomers
             // 
             this.pnlOpenCustomers.Controls.Add(this.tcOpenCust);
@@ -144,8 +135,19 @@ namespace CustomerData
             this.tcOpenCust.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
             this.tcOpenCust.Location = new System.Drawing.Point(0, 0);
             this.tcOpenCust.Name = "tcOpenCust";
+            this.tcOpenCust.ShowCloseButton = true;
             this.tcOpenCust.Size = new System.Drawing.Size(152, 156);
             this.tcOpenCust.TabIndex = 0;
+            this.tcOpenCust.CloseClick += new System.EventHandler(this.tcOpenCust_CloseClick);
+            // 
+            // pnlResults
+            // 
+            this.pnlResults.Controls.Add(this.dgResults);
+            this.pnlResults.Location = new System.Drawing.Point(43, 30);
+            this.pnlResults.Name = "pnlResults";
+            this.pnlResults.Size = new System.Drawing.Size(100, 100);
+            this.pnlResults.TabIndex = 0;
+            this.pnlResults.Visible = false;
             // 
             // dgResults
             // 
@@ -191,9 +193,9 @@ namespace CustomerData
             this.Size = new System.Drawing.Size(391, 306);
             this.Text = "ctlMainInterface";
             this.pnlContent.ResumeLayout(false);
-            this.pnlResults.ResumeLayout(false);
             this.pnlOpenCustomers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcOpenCust)).EndInit();
+            this.pnlResults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).EndInit();
             this.ResumeLayout(false);
 

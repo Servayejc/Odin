@@ -36,5 +36,13 @@ namespace Odin.DataClasses
             set { m_Customers_Nas = value; }
         }
 
+        private string m_UserName;
+
+        public string UserName
+        {
+            get { return m_UserName; }
+            set { m_UserName = value; }
+        }
+
     }
 }

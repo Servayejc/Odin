@@ -33,3 +33,5 @@ C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.pdb
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlCustomerInfo.resources
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlCustInfoMain.resources
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlTaxReturInfo.resources
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlContacts.resources
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.frmPopup.resources
