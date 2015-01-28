@@ -1,0 +1,7 @@
+C:\Users\wkloaner\Documents\Odin\Viking\obj\Debug\Viking.csprojResolveAssemblyReference.cache
+C:\Users\wkloaner\Documents\Odin\Viking\obj\Debug\Viking.ctlMainInterface.resources
+C:\Users\wkloaner\Documents\Odin\Viking\obj\Debug\Viking.csproj.GenerateResource.Cache
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Viking.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Viking.pdb
+C:\Users\wkloaner\Documents\Odin\Viking\obj\Debug\Viking.dll
+C:\Users\wkloaner\Documents\Odin\Viking\obj\Debug\Viking.pdb

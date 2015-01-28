@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}</ProjectGuid>
+    <ProjectTypeGuids>{80d85812-7475-4db8-9a61-dd0ef1ebd354};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Billing</RootNamespace>
+    <AssemblyName>Billing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Odin\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ctlBillingMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlBillingMain.Designer.cs">
+      <DependentUpon>ctlBillingMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlMainInterface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlMainInterface.Designer.cs">
+      <DependentUpon>ctlMainInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlTimeTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTimeTracker.Designer.cs">
+      <DependentUpon>ctlTimeTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BillingModule.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ctlBillingMain.resx">
+      <DependentUpon>ctlBillingMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlMainInterface.resx">
+      <DependentUpon>ctlMainInterface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTimeTracker.resx">
+      <DependentUpon>ctlTimeTracker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Odin\Odin.csproj">
+      <Project>{8E742449-ED7F-4324-8A86-16C0ECE97E63}</Project>
+      <Name>Odin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v11.0\Gizmox.VWGLibrary.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

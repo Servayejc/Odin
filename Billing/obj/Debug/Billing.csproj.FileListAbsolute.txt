@@ -1,0 +1,9 @@
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.csprojResolveAssemblyReference.cache
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.ctlMainInterface.resources
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.csproj.GenerateResource.Cache
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Billing.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Billing.pdb
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.dll
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.pdb
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.ctlBillingMain.resources
+C:\Users\wkloaner\Documents\Odin\Billing\obj\Debug\Billing.ctlTimeTracker.resources

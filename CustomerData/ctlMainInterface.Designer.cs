@@ -70,7 +70,6 @@ namespace CustomerData
             this.tlpMain.RowStyles.Add(new Gizmox.WebGUI.Forms.RowStyle(Gizmox.WebGUI.Forms.SizeType.Percent, 100F));
             this.tlpMain.Size = new System.Drawing.Size(391, 306);
             this.tlpMain.TabIndex = 0;
-            this.tlpMain.Click += new System.EventHandler(this.tlpMain_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -107,9 +106,6 @@ namespace CustomerData
             this.txtSearch.Size = new System.Drawing.Size(144, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.EnterKeyDown += new Gizmox.WebGUI.Forms.KeyEventHandler(this.txtSearch_EnterKeyDown);
-            this.txtSearch.KeyDown += new Gizmox.WebGUI.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            this.txtSearch.KeyPress += new Gizmox.WebGUI.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // pnlContent
             // 
@@ -216,8 +212,5 @@ namespace CustomerData
         private DataGridViewTextBoxColumn dcClientCode;
         private DataGridViewTextBoxColumn dcFname;
         private DataGridViewTextBoxColumn dcLname;
-
-
-
     }
 }

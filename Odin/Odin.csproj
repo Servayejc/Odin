@@ -78,10 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\graphics-vikings-958347.gif" />
+    <Content Include="Resources\Images\image01.gif" />
+    <Content Include="Resources\Images\laughing11.gif" />
     <Content Include="Resources\Images\logo-square.png" />
     <Content Include="Resources\Images\ThorHammer.jpg" />
     <Content Include="Resources\Images\ThorHammer256.png" />
     <Content Include="Resources\Images\TopLogo.jpg" />
+    <Content Include="Resources\Images\Viking.gif" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\ContactItem.cs" />

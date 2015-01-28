@@ -31,8 +31,8 @@ namespace CustomerData
         /// </summary>
         private void InitializeComponent()
         {
-            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
-            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
+            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
+            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
             this.dgCust = new Gizmox.WebGUI.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new Gizmox.WebGUI.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new Gizmox.WebGUI.Forms.DataGridViewTextBoxColumn();
@@ -54,20 +54,21 @@ namespace CustomerData
             this.dgCust.RowHeadersVisible = false;
             this.dgCust.Size = new System.Drawing.Size(391, 306);
             this.dgCust.TabIndex = 0;
+            this.dgCust.CellEndEdit += new Gizmox.WebGUI.Forms.DataGridViewCellEventHandler(this.dgCust_CellEndEdit);
+            this.dgCust.CellValueChanged += new Gizmox.WebGUI.Forms.DataGridViewCellEventHandler(this.dgCust_CellValueChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn1.HeaderText = ".";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn2.HeaderText = ".";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // ctlCustomerInfo
             // 

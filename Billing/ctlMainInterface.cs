@@ -8,23 +8,24 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using Gizmox.WebGUI.Common;
+using Gizmox.WebGUI.Common.Resources;
 using Gizmox.WebGUI.Forms;
 using Odin;
 using Odin.DataClasses;
 
 #endregion
 
-namespace CustomerData
+namespace Billing
 {
     public partial class ctlMainInterface : UserControl
     {
-
         IModule Module;
         public ctlMainInterface(IModule Module)
         {
             this.Module = Module;
-            InitializeComponent();
+            InitializeComponent();           
         }
+
 
         private List<CustomerItem> LoadCustomers(string SearchValue)
         {
@@ -53,7 +54,7 @@ namespace CustomerData
                         Pays Like @Search OR
                         CodePostal Like @Search OR
                         (Prenom + ' ' + NomFamille) Like @Search",
-                         new List<string> { "@Search"},
+                         new List<string> { "@Search" },
                          new List<object> { SearchValue }, CommandType.Text);
                 List<CustomerItem> Customers = new List<CustomerItem>();
                 foreach (DataRow dr in dt.Rows)
@@ -126,7 +127,7 @@ namespace CustomerData
                 {
                     found = true;
                     break;
-                }              
+                }
             }
 
             if (found)
@@ -134,13 +135,13 @@ namespace CustomerData
                 tcOpenCust.TabPages[idx].Text = Customer.CodeClient + " (" + Customer.Prenom + " " + Customer.NomFamille + ")";
                 if (tcOpenCust.TabPages[idx].Controls[0] != null)
                 {
-                    ((ctlCustInfoMain)tcOpenCust.TabPages[idx].Controls[0]).UpdateCust(Customer);
+                    //((ctlCustInfoMain)tcOpenCust.TabPages[idx].Controls[0]).UpdateCust(Customer);
                 }
             }
 
 
         }
-        
+
         private void txtSearch_EnterKeyDown(object objSender, KeyEventArgs objArgs)
         {
             List<CustomerItem> Customers = LoadCustomers(txtSearch.Text);
@@ -154,11 +155,11 @@ namespace CustomerData
             dgResults.Rows.Clear();
 
             foreach (CustomerItem cust in Customers)
-            {                
-                dgResults.Rows.Add(new object[]{cust.CodeClient,cust.Prenom, cust.NomFamille});
+            {
+                dgResults.Rows.Add(new object[] { cust.CodeClient, cust.Prenom, cust.NomFamille });
                 dgResults.Rows[dgResults.Rows.Count - 1].Tag = cust;
             }
-            
+
         }
 
         private void dgResults_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -184,10 +185,9 @@ namespace CustomerData
                 tp.Text = cust.CodeClient + " (" + cust.Prenom + " " + cust.NomFamille + ")";
                 tp.Tag = cust;
 
-                ctlCustInfoMain ctlmain = new ctlCustInfoMain(cust,Module);
-                ctlmain.OnUpdate += ctlmain_OnUpdate;
-                ctlmain.Dock = DockStyle.Fill;
-                tp.Controls.Add(ctlmain);
+                ctlBillingMain bill = new ctlBillingMain(Module, cust);
+                bill.Dock = DockStyle.Fill;
+                tp.Controls.Add(bill);
 
                 ShowClients();
 

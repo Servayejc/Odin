@@ -15,8 +15,10 @@ using Odin.DataClasses;
 
 namespace CustomerData
 {
+    
     public partial class ctlCustInfoMain : UserControl
     {
+        public event OnUpdateEvent OnUpdate;
         CustomerItem Customer;
         IModule Module;
         public ctlCustInfoMain(CustomerItem Customer, IModule Module)
@@ -35,6 +37,7 @@ namespace CustomerData
                 {
                     ctlCustomerInfo info = new ctlCustomerInfo(Module);
                     info.Dock = DockStyle.Fill;
+                    info.OnUpdate += info_OnUpdate;
                     tpCustInfo.Controls.Add(info);
                     tpCustInfo.Update();
                     info.UpdateGV(Customer);
@@ -78,6 +81,12 @@ namespace CustomerData
                 }
             
             }
+        }
+
+        void info_OnUpdate()
+        {
+            if (OnUpdate != null)
+                OnUpdate();
         }
 
         private void ctlCustInfoMain_Load(object sender, EventArgs e)

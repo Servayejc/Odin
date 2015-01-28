@@ -15,23 +15,29 @@ using Odin.DataClasses;
 
 namespace CustomerData
 {
+    public delegate void OnUpdateEvent();
     public partial class ctlCustomerInfo : UserControl
     {
-        IModule Module;    
-           
+        IModule Module;
+        public event OnUpdateEvent OnUpdate;
+        private CustomerItem Customer;
+        bool Loading = false;
         public ctlCustomerInfo(IModule Module)
         {
-             this.Module = Module;
+            Loading = true;
+            this.Module = Module;
             InitializeComponent(); 
         }
 
         private void ctlCustomerInfo_Load(object sender, EventArgs e)
         {
-               
+            Loading = true;
         }
 
         public void UpdateGV(CustomerItem Customer)
         {
+            Loading = true;
+            this.Customer = Customer;
             dgCust.Dock = DockStyle.None;
             dgCust.Rows.Clear();
             dgCust.Rows.Add(new object[] { "Client Code", Customer.CodeClient });
@@ -49,6 +55,45 @@ namespace CustomerData
             foreach (DataGridViewColumn dc in dgCust.Columns)
             {
                 dc.Width = dgCust.Width / 2;
+            }
+            Loading = false;
+        }
+
+        public void GetCustomer()
+        {
+            Customer.CodePostal = dgCust.Rows[7].Cells[1].Value.ToString();
+            Customer.NomFamille = dgCust.Rows[2].Cells[1].Value.ToString();
+            Customer.Prenom = dgCust.Rows[1].Cells[1].Value.ToString();
+            Customer.Numero = dgCust.Rows[4].Cells[1].Value.ToString();
+            Customer.Rue = dgCust.Rows[5].Cells[1].Value.ToString();
+            Customer.Ville = dgCust.Rows[6].Cells[1].Value.ToString();
+            Customer.Province = dgCust.Rows[8].Cells[1].Value.ToString();
+            Customer.Pays = dgCust.Rows[9].Cells[1].Value.ToString();
+        }
+
+        private void dgCust_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgCust_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!Loading)
+            {
+                GetCustomer();
+
+                SQLHelper sh = new SQLHelper();
+                sh.ExecuteNonQuery(@"Update Customers set CodePostal=@CodePostal,NomFamille=@NomFamille,
+                                Prenom=@Prenom,Numero=@Numero,
+                                Rue=@Rue,Ville=@Ville,
+                                  Province=@Province,Pays=@Pays where NAS=@NAS",
+                                   new List<string> { "@CodePostal", "@NomFamille", "@Prenom", "@Numero", "@Rue", "@Ville", "@Province", "@Pays", "@NAS" },
+                                   new List<object> { Customer.CodePostal, Customer.NomFamille, Customer.Prenom, Customer.Numero, Customer.Rue, Customer.Ville, Customer.Province, Customer.Pays, Customer.NAS }, CommandType.Text);
+                sh.ExecuteNonQuery(@"Insert Into UpdateStatuses  (NAS,TaxYear,FileName) Values (@NAS,@TaxYear,@FileName)",
+                                   new List<string> { "@NAS", "@TaxYear", "@FileName" },
+                                   new List<object> { Customer.NAS, 2014, Customer.FileName }, CommandType.Text);
+                if (OnUpdate != null)
+                    OnUpdate();
             }
         }
     }

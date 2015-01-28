@@ -77,5 +77,13 @@ namespace Odin.DataClasses
             get { return m_CodePostal; }
             set { m_CodePostal = value; }
         }
+
+        private string m_FileName;
+
+        public string FileName
+        {
+            get { return m_FileName; }
+            set { m_FileName = value; }
+        }
     }
 }

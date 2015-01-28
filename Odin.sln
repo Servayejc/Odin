@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Odin", "Odin\Odin.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerData", "CustomerData\CustomerData.csproj", "{B4CD5085-15DA-4F65-85B6-16F8A95D94EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viking", "Viking\Viking.csproj", "{05E8A2F2-225A-420A-AA26-768688EBD5D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing", "Billing\Billing.csproj", "{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{B4CD5085-15DA-4F65-85B6-16F8A95D94EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4CD5085-15DA-4F65-85B6-16F8A95D94EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4CD5085-15DA-4F65-85B6-16F8A95D94EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E8A2F2-225A-420A-AA26-768688EBD5D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E8A2F2-225A-420A-AA26-768688EBD5D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E8A2F2-225A-420A-AA26-768688EBD5D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E8A2F2-225A-420A-AA26-768688EBD5D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325BADDD-11BD-4D75-8C51-3838DB2DCFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
