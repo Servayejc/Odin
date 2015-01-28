@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 
 namespace Odin
@@ -33,8 +35,43 @@ namespace Odin
 
         public void RemoveModule(IModule Module)
         {
-            if (GetModuleByID(Module.ModuleID) == null)
+            IModule module = GetModuleByID(Module.ModuleID);
+            if (module != null)
+            {
+                module.Dispose();
                 AvailableModules.Remove(Module);
+            }
+        }
+
+        public void LoadModules()
+        {
+            DirectoryInfo di = new DirectoryInfo(Gizmox.WebGUI.Common.Global.Context.Config.GetDirectory("Modules"));
+
+            FileInfo[] Files = di.GetFiles("*.dll", SearchOption.TopDirectoryOnly);
+            
+            foreach (FileInfo file in Files)
+            { 
+                Assembly assembly = Assembly.LoadFrom(file.FullName);
+                Type[] AssemblyTypes = assembly.GetTypes();
+                foreach (Type t in AssemblyTypes)
+                {
+                    if (t.IsPublic)
+                    {
+                        Type moduleinterface = t.GetInterface("Odin.IModule");
+                        if (moduleinterface != null)
+                        {
+                            AddModule(CreateModule(assembly, t));
+                        }
+                    }
+                }
+            }
+        }
+
+        private IModule CreateModule(Assembly assembly, Type t)
+        {
+            IModule module = (IModule)Activator.CreateInstance(t);
+            module.initialize();
+            return module;
         }
     }
 }

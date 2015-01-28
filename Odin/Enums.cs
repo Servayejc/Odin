@@ -8,6 +8,7 @@ namespace Odin
     public enum ModuleStates
     {
         Hidden,
-        Active
+        Active,
+        Unknown
     }
 }

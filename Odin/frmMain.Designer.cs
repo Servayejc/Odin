@@ -28,10 +28,20 @@ namespace Odin
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlControls = new Gizmox.WebGUI.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // pnlControls
+            // 
+            this.pnlControls.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
+            this.pnlControls.Location = new System.Drawing.Point(0, 0);
+            this.pnlControls.Name = "pnlControls";
+            this.pnlControls.Size = new System.Drawing.Size(321, 286);
+            this.pnlControls.TabIndex = 0;
             // 
             // frmMain
             // 
+            this.Controls.Add(this.pnlControls);
             this.Size = new System.Drawing.Size(321, 286);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -40,5 +50,7 @@ namespace Odin
         }
 
         #endregion
+
+        private Gizmox.WebGUI.Forms.Panel pnlControls;
     }
 }

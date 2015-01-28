@@ -30,3 +30,34 @@ c:\users\wkloaner\documents\visual studio 2012\Projects\Odin\Odin\obj\Debug\Odin
 c:\users\wkloaner\documents\visual studio 2012\Projects\Odin\Odin\obj\Debug\Odin.pdb
 c:\users\wkloaner\documents\visual studio 2012\Projects\Odin\Odin\bin\Gizmox.WebGUI.Forms.Charts.dll
 c:\users\wkloaner\documents\visual studio 2012\Projects\Odin\Odin\bin\Gizmox.WebGUI.Forms.Charts.xml
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Odin.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Odin.pdb
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Common.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Charts.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Themes.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Server.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Newtonsoft.Json.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Common.xml
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Charts.xml
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.xml
+C:\Users\wkloaner\Documents\Odin\Odin\bin\de-AT\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\de-DE\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\es-GT\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\fa-IR\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\fr-CA\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\he-IL\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\is-IS\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\ja-JP\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\nl-NL\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\pl-PL\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\pt-BR\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\pt-PT\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\sv-SE\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\tr-TR\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\zh-CHS\Gizmox.WebGUI.Forms.resources.dll
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.frmLogin.resources
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.frmMain.resources
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.csproj.GenerateResource.Cache
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.dll
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.pdb

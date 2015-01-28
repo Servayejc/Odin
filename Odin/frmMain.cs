@@ -27,6 +27,20 @@ namespace Odin
             {
                 this.Context.Transfer(new frmLogin());
             }
+            else
+            {
+                ModuleManager manager = new ModuleManager();
+                manager.LoadModules();
+
+                IModule module = manager.GetModuleByName("Customer Data");
+                if (module != null)
+                {
+                    module.MainInterface.Dock = DockStyle.Fill;
+                    pnlControls.Controls.Clear();
+                    pnlControls.Controls.Add(module.MainInterface);
+                }
+
+            }
         }
     }
 }
