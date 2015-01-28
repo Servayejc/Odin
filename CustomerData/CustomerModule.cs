@@ -12,7 +12,8 @@ namespace CustomerData
     {
         #region IModule Members
         private ModuleStates m_state = ModuleStates.Unknown;
-        private UserControl maininterface = new ctlMainInterface();
+        private UserControl maininterface;
+        private ModuleGlobal m_ModuleGlobal;
 
         public string ModuleName
         {
@@ -42,7 +43,7 @@ namespace CustomerData
 
         public void initialize()
         {
-            maininterface = new ctlMainInterface();
+            maininterface = new ctlMainInterface(this);
         }
 
         public void Dispose()
@@ -54,6 +55,18 @@ namespace CustomerData
         public int Order
         {
             get { return 1; }
+        }
+
+        #endregion
+
+
+        #region IModule Members
+
+
+        public ModuleGlobal GlobalConfig
+        {
+            get { return m_ModuleGlobal; }
+            set { m_ModuleGlobal = value; }
         }
 
         #endregion

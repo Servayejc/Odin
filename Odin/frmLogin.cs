@@ -34,7 +34,7 @@ namespace Odin
             if (manager.IsValid)
             {
                 this.Context.IsLoggedOn = true;
-                this.Context.Transfer(new frmMain());
+                this.Context.Transfer(new frmMain(txtUser.Text));
             }
             else
             {

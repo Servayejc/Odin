@@ -6,9 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
+using Odin;
 using Odin.DataClasses;
 
 #endregion
@@ -18,8 +18,10 @@ namespace CustomerData
     public partial class ctlCustInfoMain : UserControl
     {
         CustomerItem Customer;
-        public ctlCustInfoMain(CustomerItem Customer)
+        IModule Module;
+        public ctlCustInfoMain(CustomerItem Customer, IModule Module)
         {
+            this.Module = Module;
             this.Customer = Customer;
             InitializeComponent();
         }
@@ -31,7 +33,7 @@ namespace CustomerData
                 //customer info
                 if (tpCustInfo.Controls.Count == 0)
                 {
-                    ctlCustomerInfo info = new ctlCustomerInfo();
+                    ctlCustomerInfo info = new ctlCustomerInfo(Module);
                     info.Dock = DockStyle.Fill;
                     tpCustInfo.Controls.Add(info);
                     tpCustInfo.Update();
@@ -48,7 +50,7 @@ namespace CustomerData
                 //tax returns
                 if (tpTaxReturns.Controls.Count == 0)
                 {
-                    ctlTaxReturInfo ctltaxreturns = new ctlTaxReturInfo(Customer);
+                    ctlTaxReturInfo ctltaxreturns = new ctlTaxReturInfo(Customer, Module);
                     ctltaxreturns.Dock = DockStyle.Fill;
                     tpTaxReturns.Controls.Add(ctltaxreturns);
                 }
@@ -64,7 +66,7 @@ namespace CustomerData
                 //tax returns
                 if (tpContacts.Controls.Count == 0)
                 {
-                    ctlContacts ctlcontact = new ctlContacts(Customer);
+                    ctlContacts ctlcontact = new ctlContacts(Customer, Module);
                     ctlcontact.Dock = DockStyle.Fill;
                     tpContacts.Controls.Add(ctlcontact);
                     ctlcontact.UpdateGV(Customer);
@@ -82,6 +84,27 @@ namespace CustomerData
         {
             tcMain.SelectedIndex = -1;
             tcMain.SelectedIndex = 0;
+        }
+
+        public void UpdateCust(CustomerItem Customer)
+        {
+            if (tpCustInfo.Controls.Count > 0)
+            {
+                ctlCustomerInfo info = tpCustInfo.Controls[0] as ctlCustomerInfo;
+                info.UpdateGV(Customer);
+            }
+
+            if (tpTaxReturns.Controls.Count > 0)
+            {
+                ctlTaxReturInfo ctltaxreturns = tpTaxReturns.Controls[0] as ctlTaxReturInfo;
+                ctltaxreturns.UpdateGV();
+            }
+
+            if (tpContacts.Controls.Count > 0)
+            {
+                ctlContacts ctlcontact = tpContacts.Controls[0] as ctlContacts;
+                ctlcontact.UpdateGV(Customer);
+            }         
         }
     }
 }

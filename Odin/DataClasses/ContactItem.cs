@@ -44,5 +44,13 @@ namespace Odin.DataClasses
             set { m_UserName = value; }
         }
 
+        private Guid m_ContactID;
+
+        public Guid ContactID
+        {
+            get { return m_ContactID; }
+            set { m_ContactID = value; }
+        }
+
     }
 }

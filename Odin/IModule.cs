@@ -16,6 +16,7 @@ namespace Odin
         UserControl MainInterface { get; }
         void initialize();
         int Order { get; }
+        ModuleGlobal GlobalConfig { get; set; }
 
     }
 }

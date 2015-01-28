@@ -41,11 +41,9 @@ namespace Odin
             this.lblError = new Gizmox.WebGUI.Forms.Label();
             this.txtUser = new Gizmox.WebGUI.Forms.TextBox();
             this.lblPass = new Gizmox.WebGUI.Forms.Label();
-            this.pblogo = new Gizmox.WebGUI.Forms.PictureBox();
             this.pictureBox1 = new Gizmox.WebGUI.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +64,6 @@ namespace Odin
             this.tableLayoutPanel1.ColumnStyles.Add(new Gizmox.WebGUI.Forms.ColumnStyle(Gizmox.WebGUI.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pblogo, 0, 2);
             this.tableLayoutPanel1.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -145,17 +142,6 @@ namespace Odin
             this.lblPass.TabIndex = 0;
             this.lblPass.Text = "Password";
             // 
-            // pblogo
-            // 
-            this.pblogo.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
-            this.pblogo.Image = new Gizmox.WebGUI.Common.Resources.ImageResourceHandle(resources.GetString("pblogo.Image"));
-            this.pblogo.Location = new System.Drawing.Point(0, 367);
-            this.pblogo.Name = "pblogo";
-            this.pblogo.RightToLeft = Gizmox.WebGUI.Forms.RightToLeft.No;
-            this.pblogo.Size = new System.Drawing.Size(386, 180);
-            this.pblogo.TabIndex = 3;
-            this.pblogo.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
@@ -175,7 +161,6 @@ namespace Odin
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -193,7 +178,6 @@ namespace Odin
         private TextBox txtUser;
         private Label lblPass;
         private PictureBox pictureBox1;
-        private PictureBox pblogo;
 
 
 

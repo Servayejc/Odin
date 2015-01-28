@@ -43,7 +43,7 @@ namespace Odin
             }
         }
 
-        public void LoadModules()
+        public void LoadModules(ModuleGlobal mg)
         {
             DirectoryInfo di = new DirectoryInfo(Gizmox.WebGUI.Common.Global.Context.Config.GetDirectory("Modules"));
 
@@ -60,7 +60,7 @@ namespace Odin
                         Type moduleinterface = t.GetInterface("Odin.IModule");
                         if (moduleinterface != null)
                         {
-                            AddModule(CreateModule(assembly, t));
+                            AddModule(CreateModule(assembly, t, mg));
                             break;
                         }
                        
@@ -75,9 +75,10 @@ namespace Odin
             AvailableModules.Sort((x, y) => x.Order.CompareTo(y.Order));
         }
 
-        private IModule CreateModule(Assembly assembly, Type t)
+        private IModule CreateModule(Assembly assembly, Type t, ModuleGlobal mg)
         {
             IModule module = (IModule)Activator.CreateInstance(t);
+            module.GlobalConfig = mg;
             module.initialize();
             return module;
         }

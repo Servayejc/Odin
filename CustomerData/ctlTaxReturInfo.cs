@@ -18,8 +18,11 @@ namespace CustomerData
     public partial class ctlTaxReturInfo : UserControl
     {
         CustomerItem Customer;
-        public ctlTaxReturInfo(CustomerItem Customer)
+        IModule Module;
+
+        public ctlTaxReturInfo(CustomerItem Customer, IModule Module)
         {
+            this.Module = Module;
             this.Customer = Customer;
             InitializeComponent();
 

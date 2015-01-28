@@ -16,8 +16,10 @@ namespace Odin
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        string User;
+        public frmMain(string User)
         {
+            this.User = User;
             InitializeComponent();
         }
 
@@ -29,8 +31,10 @@ namespace Odin
             }
             else
             {
+                ModuleGlobal mg = new ModuleGlobal();
+                mg.User = User;
                 ModuleManager manager = new ModuleManager();
-                manager.LoadModules();
+                manager.LoadModules(mg);
 
                 foreach (IModule module in manager.AvailableModules)
                 {

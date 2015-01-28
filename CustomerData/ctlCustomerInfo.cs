@@ -6,9 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-
 using Gizmox.WebGUI.Common;
 using Gizmox.WebGUI.Forms;
+using Odin;
 using Odin.DataClasses;
 
 #endregion
@@ -17,9 +17,11 @@ namespace CustomerData
 {
     public partial class ctlCustomerInfo : UserControl
     {
-
-        public ctlCustomerInfo()
+        IModule Module;    
+           
+        public ctlCustomerInfo(IModule Module)
         {
+             this.Module = Module;
             InitializeComponent(); 
         }
 

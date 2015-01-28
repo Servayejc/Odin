@@ -18,8 +18,11 @@ namespace CustomerData
 {
     public partial class ctlMainInterface : UserControl
     {
-        public ctlMainInterface()
+
+        IModule Module;
+        public ctlMainInterface(IModule Module)
         {
+            this.Module = Module;
             InitializeComponent();
         }
 
@@ -87,6 +90,65 @@ namespace CustomerData
             }
         }
 
+        private void UpdateCustomer(CustomerItem Customer)
+        {
+            SQLHelper sh = new SQLHelper();
+            DataTable dt = sh.GetData(@"SELECT [Prenom]
+                      ,[NomFamille]
+                      ,[CodeClient]
+                      ,[NAS]
+                      ,[Ville]
+                      ,[Rue]
+                      ,[Numero]
+                      ,[Province]
+                      ,[Pays]
+                      ,[CodePostal]
+                  FROM [Odin].[dbo].[Customers]
+                  where NAS = @Search",
+                     new List<string> { "@Search" },
+                     new List<object> { Customer.NAS }, CommandType.Text);
+
+            CustomerItem ci = new CustomerItem();
+            foreach (DataRow dr in dt.Rows)
+            {
+                ci.CodeClient = dr["CodeClient"] != DBNull.Value ? dr["CodeClient"].ToString() : string.Empty;
+                ci.Prenom = dr["Prenom"] != DBNull.Value ? dr["Prenom"].ToString() : string.Empty;
+                ci.NomFamille = dr["NomFamille"] != DBNull.Value ? dr["NomFamille"].ToString() : string.Empty;
+                ci.NAS = dr["NAS"] != DBNull.Value ? dr["NAS"].ToString() : string.Empty;
+                ci.Ville = dr["Ville"] != DBNull.Value ? dr["Ville"].ToString() : string.Empty;
+                ci.Rue = dr["Rue"] != DBNull.Value ? dr["Rue"].ToString() : string.Empty;
+                ci.Numero = dr["Numero"] != DBNull.Value ? dr["Numero"].ToString() : string.Empty;
+                ci.Province = dr["Province"] != DBNull.Value ? dr["Province"].ToString() : string.Empty;
+                ci.Pays = dr["Pays"] != DBNull.Value ? dr["Pays"].ToString() : string.Empty;
+                ci.CodePostal = dr["CodePostal"] != DBNull.Value ? dr["CodePostal"].ToString() : string.Empty;
+                Customer = ci;
+
+            }
+
+            bool found = false;
+            int idx = -1;
+            foreach (TabPage tab in tcOpenCust.TabPages)
+            {
+                idx++;
+                if (tab.Name.StartsWith(Customer.CodeClient + "~"))
+                {
+                    found = true;
+                    break;
+                }              
+            }
+
+            if (found)
+            {
+                tcOpenCust.TabPages[idx].Text = Customer.CodeClient + " (" + Customer.Prenom + " " + Customer.NomFamille + ")";
+                if (tcOpenCust.TabPages[idx].Controls[0] != null)
+                {
+                    ((ctlCustInfoMain)tcOpenCust.TabPages[idx].Controls[0]).UpdateCust(Customer);
+                }
+            }
+
+
+        }
+
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
         }
@@ -135,10 +197,11 @@ namespace CustomerData
             if (!found)
             {
                 TabPage tp = new TabPage();
-                tp.Name = cust.CodeClient + "~" + new Guid().ToString();
-                tp.Text = cust.CodeClient + " (" + cust.Prenom + " " + cust.NomFamille + " )";
+                tp.Name = cust.CodeClient + "~" + Guid.NewGuid().ToString();
+                tp.Text = cust.CodeClient + " (" + cust.Prenom + " " + cust.NomFamille + ")";
+                tp.Tag = cust;
 
-                ctlCustInfoMain ctlmain = new ctlCustInfoMain(cust);
+                ctlCustInfoMain ctlmain = new ctlCustInfoMain(cust,Module);
                 ctlmain.Dock = DockStyle.Fill;
                 tp.Controls.Add(ctlmain);
 
@@ -152,6 +215,7 @@ namespace CustomerData
             {
                 ShowClients();
                 tcOpenCust.SelectedIndex = idx;
+                UpdateCustomer(cust);
             }
 
         }
@@ -169,6 +233,11 @@ namespace CustomerData
         {
             tcOpenCust.TabPages[tcOpenCust.SelectedIndex].Controls[0].Dispose();
             tcOpenCust.TabPages.RemoveAt(tcOpenCust.SelectedIndex);
+        }
+
+        private void tcOpenCust_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCustomer(((TabControl)sender).SelectedTab.Tag as CustomerItem);
         }
 
     }

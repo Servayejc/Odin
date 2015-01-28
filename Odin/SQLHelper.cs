@@ -43,7 +43,9 @@ namespace Odin
         }
 
         public void ExecuteNonQuery(string SQL, List<string> Params, List<object> ParamValues, CommandType cmdType)
-        {           
+        {
+            try
+            {
                 SqlConnection cnn = new SqlConnection(cnnString);
                 cnn.Open();
                 SqlCommand cmd = new SqlCommand(SQL, cnn);
@@ -59,6 +61,11 @@ namespace Odin
                 cmd.Dispose();
                 cnn.Close();
                 cnn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                string test = "";
+            }
         }
     }
 }

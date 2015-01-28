@@ -31,9 +31,9 @@ namespace CustomerData
         /// </summary>
         private void InitializeComponent()
         {
-            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
-            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
-            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
+            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
+            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
+            Gizmox.WebGUI.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new Gizmox.WebGUI.Forms.DataGridViewCellStyle();
             this.tlpMain = new Gizmox.WebGUI.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new Gizmox.WebGUI.Forms.TableLayoutPanel();
             this.label1 = new Gizmox.WebGUI.Forms.Label();
@@ -139,6 +139,7 @@ namespace CustomerData
             this.tcOpenCust.Size = new System.Drawing.Size(152, 156);
             this.tcOpenCust.TabIndex = 0;
             this.tcOpenCust.CloseClick += new System.EventHandler(this.tcOpenCust_CloseClick);
+            this.tcOpenCust.SelectedIndexChanged += new System.EventHandler(this.tcOpenCust_SelectedIndexChanged);
             // 
             // pnlResults
             // 
@@ -167,21 +168,21 @@ namespace CustomerData
             // 
             // dcClientCode
             // 
-            this.dcClientCode.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dcClientCode.DefaultCellStyle = dataGridViewCellStyle7;
             this.dcClientCode.HeaderText = "Client Code";
             this.dcClientCode.Name = "dcClientCode";
             this.dcClientCode.ReadOnly = true;
             // 
             // dcFname
             // 
-            this.dcFname.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dcFname.DefaultCellStyle = dataGridViewCellStyle8;
             this.dcFname.HeaderText = "First Name";
             this.dcFname.Name = "dcFname";
             this.dcFname.ReadOnly = true;
             // 
             // dcLname
             // 
-            this.dcLname.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dcLname.DefaultCellStyle = dataGridViewCellStyle9;
             this.dcLname.HeaderText = "Last Name";
             this.dcLname.Name = "dcLname";
             this.dcLname.ReadOnly = true;
