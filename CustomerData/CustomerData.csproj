@@ -54,11 +54,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctlCustInfoMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlCustInfoMain.Designer.cs">
+      <DependentUpon>ctlCustInfoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlCustomerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlCustomerInfo.Designer.cs">
+      <DependentUpon>ctlCustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctlMainInterface.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ctlMainInterface.Designer.cs">
       <DependentUpon>ctlMainInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlTaxReturInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTaxReturInfo.Designer.cs">
+      <DependentUpon>ctlTaxReturInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +89,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctlCustInfoMain.resx">
+      <DependentUpon>ctlCustInfoMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlCustomerInfo.resx">
+      <DependentUpon>ctlCustomerInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctlMainInterface.resx">
       <DependentUpon>ctlMainInterface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTaxReturInfo.resx">
+      <DependentUpon>ctlTaxReturInfo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

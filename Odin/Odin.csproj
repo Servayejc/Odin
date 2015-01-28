@@ -78,10 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.txt" />
+    <Content Include="Resources\Images\logo-square.png" />
     <Content Include="Resources\Images\ThorHammer.jpg" />
     <Content Include="Resources\Images\ThorHammer256.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\ContactItem.cs" />
+    <Compile Include="DataClasses\CustomerItem.cs" />
+    <Compile Include="DataClasses\TaxReturnItem.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -95,6 +99,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLHelper.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>

@@ -62,3 +62,4 @@ C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.frmMain.resources
 C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.csproj.GenerateResource.Cache
 C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.dll
 C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.pdb
+C:\Users\wkloaner\Documents\Odin\Odin\obj\Debug\Odin.csprojResolveAssemblyReference.cache

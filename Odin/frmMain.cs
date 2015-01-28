@@ -50,8 +50,14 @@ namespace Odin
         {
             if (e.Node.Tag != null)
             {
+                UserControl ctl = ((IModule)e.Node.Tag).MainInterface;
+                ctl.Dock = DockStyle.Fill;
+                foreach (UserControl ctls in pnlControls.Controls)
+                {
+                    ctls.Dispose();
+                }
                 pnlControls.Controls.Clear();
-                pnlControls.Controls.Add(((IModule)e.Node.Tag).MainInterface);
+                pnlControls.Controls.Add(ctl);
                 pnlControls.Text = ((IModule)e.Node.Tag).ModuleName;
             } 
         }

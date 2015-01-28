@@ -57,6 +57,7 @@ namespace Odin
             // 
             // pnlControls
             // 
+            this.pnlControls.BackColor = System.Drawing.Color.White;
             this.pnlControls.CustomStyle = "HeaderedPanel";
             this.pnlControls.Dock = Gizmox.WebGUI.Forms.DockStyle.Fill;
             this.pnlControls.Location = new System.Drawing.Point(250, 0);
@@ -109,7 +110,7 @@ namespace Odin
             // 
             this.Controls.Add(this.tlpMain);
             this.Size = new System.Drawing.Size(321, 286);
-            this.Text = "Form1";
+            this.Text = "Odin";
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ntMenu)).EndInit();
             this.ntMenu.ResumeLayout(false);

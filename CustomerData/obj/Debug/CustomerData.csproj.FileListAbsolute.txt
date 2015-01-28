@@ -30,3 +30,6 @@ C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlMainInte
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.csproj.GenerateResource.Cache
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.dll
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.pdb
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlCustomerInfo.resources
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlCustInfoMain.resources
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlTaxReturInfo.resources

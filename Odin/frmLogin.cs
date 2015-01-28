@@ -43,5 +43,15 @@ namespace Odin
             }
             
         }
+
+        private void txtPass_EnterKeyDown(object objSender, KeyEventArgs objArgs)
+        {
+            btnLogin_Click(objSender, new EventArgs());
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
