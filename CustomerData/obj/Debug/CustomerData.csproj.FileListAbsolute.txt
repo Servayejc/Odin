@@ -23,10 +23,10 @@ C:\Users\wkloaner\Documents\Odin\CustomerData\bin\Debug\pt-PT\Gizmox.WebGUI.Form
 C:\Users\wkloaner\Documents\Odin\CustomerData\bin\Debug\sv-SE\Gizmox.WebGUI.Forms.resources.dll
 C:\Users\wkloaner\Documents\Odin\CustomerData\bin\Debug\tr-TR\Gizmox.WebGUI.Forms.resources.dll
 C:\Users\wkloaner\Documents\Odin\CustomerData\bin\Debug\zh-CHS\Gizmox.WebGUI.Forms.resources.dll
-C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.csprojResolveAssemblyReference.cache
-C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.dll
-C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.pdb
 C:\Users\wkloaner\Documents\Odin\Odin\bin\CustomerData.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\CustomerData.pdb
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.csprojResolveAssemblyReference.cache
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.ctlMainInterface.resources
 C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.csproj.GenerateResource.Cache
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.dll
+C:\Users\wkloaner\Documents\Odin\CustomerData\obj\Debug\CustomerData.pdb

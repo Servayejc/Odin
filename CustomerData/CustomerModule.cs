@@ -40,23 +40,20 @@ namespace CustomerData
             get { return maininterface; }
         }
 
-        #endregion
-
-        #region IModule Members
-
-
         public void initialize()
         {
             maininterface = new ctlMainInterface();
         }
 
-        #endregion
-
-        #region IDisposable Members
-
         public void Dispose()
         {
             maininterface.Dispose();
+        }      
+
+
+        public int Order
+        {
+            get { return 1; }
         }
 
         #endregion

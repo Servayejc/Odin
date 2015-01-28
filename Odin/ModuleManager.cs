@@ -61,10 +61,18 @@ namespace Odin
                         if (moduleinterface != null)
                         {
                             AddModule(CreateModule(assembly, t));
+                            break;
                         }
+                       
                     }
                 }
+                AssemblyTypes = null;
+                assembly = null;
+
+
             }
+
+            AvailableModules.Sort((x, y) => x.Order.CompareTo(y.Order));
         }
 
         private IModule CreateModule(Assembly assembly, Type t)

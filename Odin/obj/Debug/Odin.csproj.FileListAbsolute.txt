@@ -35,6 +35,7 @@ C:\Users\wkloaner\Documents\Odin\Odin\bin\Odin.pdb
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Common.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Charts.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.dll
+C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Office.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Forms.Themes.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Gizmox.WebGUI.Server.dll
 C:\Users\wkloaner\Documents\Odin\Odin\bin\Newtonsoft.Json.dll

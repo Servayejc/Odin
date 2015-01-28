@@ -15,5 +15,7 @@ namespace Odin
         bool isPublic { get; }
         UserControl MainInterface { get; }
         void initialize();
+        int Order { get; }
+
     }
 }

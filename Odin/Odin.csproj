@@ -45,6 +45,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Gizmox.WebGUI.Forms.Charts, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=f1bb83df6a8597fb, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Office, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=d50c2c7452ba77d9, processorArchitecture=MSIL" />
     <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <Private>True</Private>
